@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <!-- <link rel="shortcut icon" href="img/favicon.png"> -->
+    <link rel="stylesheet" href="https://unpkg.com/phosphor-icons@1.3.2/src/css/phosphor.css">
+    <script defer src="./script.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+    <title>App Screen Recorder | Free Screen Recorder + Camera</title>
+</head>
+<body>
+    <style>
+        .scrollable-place {
+            height: 1000px;
+        }
+    </style>
+    <div class="jk98">
+        <div class="mobileViewOnly hide">
+            <!-- <img class="mobileViewImg" src="/img/mobileView.png" alt="MobileViewImg"> -->
+            <div class="headText">
+                Mobile support not available
+            </div>
+        </div>
+        <div class="error-cont hide">Something went wrong</div>
+
+        <div class="lay23">
+            <div class="headText">App Screen Recorder + WebCam</div>
+            <div class="options-container">
+                <div class="start-container" id="webmic">
+                    <i class="ph-microphone mic-icon">
+                        <p class="option-text">Microphone</p>
+                    </i>
+                </div>
+
+                <div data-option=0 class="option" style="display:none";>
+                    <i class="ph-camera option-icons"></i>
+                    <p class="option-text">WebCam Only</p>
+                </div>
+                <div data-option=1 class="option selected">
+                    <svg id="Capa_1" enable-background="new 0 0 512 512" width="4rem" height="4rem" fill="currentColor" viewBox="0 0 512 512"  xmlns="http://www.w3.org/2000/svg"><g><path d="m482 25h-452c-16.542 0-30 13.458-30 30v298c0 16.542 13.458 30 30 30h147v74h-81c-8.284 0-15 6.716-15 15s6.716 15 15 15h320c8.284 0 15-6.716 15-15s-6.716-15-15-15h-81v-74h147c16.542 0 30-13.458 30-30v-298c0-16.542-13.458-30-30-30zm-177 432h-98v-74h98zm177-104c-13.157 0-441.456 0-452 0v-298h452c.019 304.472.1 298 0 298z"/></g></svg>            
+                    <p class="option-text">Screen Only</p>
+                </div>
+                <div data-option=2 class="option" id="webcam">
+                    <div class="cameraPlusMonitor">
+                                      <svg version="1.1" id="Capa_1" width="4rem" height="4rem" fill="currentColor" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                          viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
+                       <g>
+                         <g>
+                           <path d="M471,215c0-57.429-22.364-111.42-62.972-152.028C367.42,22.364,313.429,0,256,0c-57.429,0-111.42,22.364-152.028,62.972
+                             C63.364,103.58,41,157.571,41,215s22.364,111.42,62.972,152.028c15.701,15.701,33.409,28.66,52.536,38.668
+                             C133.718,430.396,121,462.598,121,497v15h270v-15c0-34.401-12.718-66.604-35.508-91.303
+                             c19.127-10.008,36.835-22.968,52.536-38.668C448.636,326.42,471,272.429,471,215z M359.948,482H152.052
+                             c3.477-24.569,15.466-46.908,34.225-63.519C208.425,426.049,231.907,430,256,430s47.575-3.951,69.723-11.519
+                             C344.482,435.093,356.471,457.431,359.948,482z M256,400c-102.009,0-185-82.99-185-185S153.991,30,256,30s185,82.99,185,185
+                             S358.009,400,256,400z"/>
+                         </g>
+                       </g>
+                       <g>
+                         <g>
+                           <path d="M256,140c-41.355,0-75,33.645-75,75s33.645,75,75,75s75-33.645,75-75C331,173.645,297.355,140,256,140z M256,260
+                             c-24.813,0-45-20.187-45-45s20.187-45,45-45s45,20.187,45,45S280.813,260,256,260z"/>
+                         </g>
+                       </g>
+                       <g>
+                         <g>
+                           <circle cx="346" cy="125" r="20"/>
+                         </g>
+                       </g>
+                       <g>
+                       </g>
+                       <g>
+                       </g>
+                       <g>
+                       </g>
+                       <g>
+                       </g>
+                       <g>
+                       </g>
+                       <g>
+                       </g>
+                       <g>
+                       </g>
+                       <g>
+                       </g>
+                       <g>
+                       </g>
+                       <g>
+                       </g>
+                       <g>
+                       </g>
+                       <g>
+                       </g>
+                       <g>
+                       </g>
+                       <g>
+                       </g>
+                       <g>
+                       </g>
+                       </svg>
+                       
+                        <!-- <i class="ph-monitor option-icons"></i> -->
+                    </div>
+                    <p class="option-text">With Webcam</p>
+                </div>
+
+                <div class="btn23">
+                    <button id="saveEvent" class="ghjr12 startBtn uplift"><samp class="blink45"></samp>Start Recording</button>
+                    <p class="startText uplift"></p>
+                </div>
+            </div>
+
+            <div>
+                <div class="inprogress-container hide">
+                    <div class="record-btn-container">
+                        <div class="record-btn rec-animate"></div>
+                        <span class="headText1">Recording in progress</span>
+                    </div>
+
+                    <div class="countDown">00:00</div>
+
+                    <button class="closeCamera" id="closeCamera">Close Camera
+                    <button class="micaction" id="micaction" >Mute
+
+                    <button class="stopRec">Stop Recording
+                </div>
+            </div>
+
+            <div class="saveVideo-container hide">
+                <span class="headText2">Here is your video</span>
+                 
+                <img  class="previw23" src="img/mac.png" alt="desktop">
+                <!-- <canvas id="merge-canvas"></canvas> -->
+                <video id="videvent"src="" poster="img/pos.jpeg" controls class="save-vid"></video>
+                <img id="vm-watermark" data-src="img/watermark.svg">
+                <div class="saveVideo-head">
+                    <i class="ph-house">
+                        <svg id="recordIcon" height="30px" style="enable-background:new 0 0 512 512;vertical-align: middle;color: red;     margin-right: 9px;" version="1.1" viewBox="0 0 512 512" width="30px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g><path d="M303.7,128h-221C63.9,128,47,142.1,47,160.7v187.9c0,18.6,16.9,35.4,35.7,35.4h221c18.8,0,33.3-16.8,33.3-35.4V160.7   C337,142.1,322.5,128,303.7,128z"></path><path d="M367,213v85.6l98,53.4V160L367,213z"></path><rect rx="10" x="80" y="160" width="80" height="60" style="fill:red;"></rect></g></svg>
+                        New Record</i>
+                
+                </div>
+                <a href="" class="saveBtnLink"><button class="saveBtn-container">Save To Downloads</button></a>
+            </div>
+
+            <div class="vid-container" id="hidecamera">
+                <video id="cameraRecord" autoplay style="opacity: 1; z-index: 1000; height: 136px; width: 176px;" muted="muted" src="" ondblclick="pip(true)"></video>
+            </div>
+        </div>
+        <p class="scrollable-place"></p>
+    </body>
+
+    <script type="text/javascript">
+
+    window.onload = function() {
+        navigator.getMedia = ( navigator.getUserMedia || // use the proper vendor prefix
+                       navigator.webkitGetUserMedia ||
+                       navigator.mozGetUserMedia ||
+                       navigator.msGetUserMedia);
+        navigator.getMedia({ video : true, audio: true }, 
+            function() {
+              // alert('yes')
+            },
+            function() {
+            document.getElementById('webcam').className += ' disablewebcam'
+            });
+    };
+
+    function removehiddenAttr()
+    {
+        document.getElementById("closeCamera").removeAttribute("hidden");
+    }
+
+    function addhiddenAttr()
+    {
+        document.getElementById("closeCamera").addAttribute("hidden");
+    }
+    //on stop rec && now moved to main script file
+    function addDisAtt(){
+        // alert("yes")
+        var elementVar = document.getElementById("cameraRecord");
+        elementVar.setAttribute("disablepictureinpicture", "disablepictureinpicture");
+        // document.getElementById("cameraRecord").setAttribute("disablepictureinpicture");
+    }
+    // on start rec && now moved to main script file
+    function remDisAtt(){
+        var elementVar = document.getElementById("cameraRecord");
+        elementVar.removeAttribute("disablepictureinpicture", "disablepictureinpicture");
+        // document.getElementById("cameraRecord").removeAttribute("disablepictureinpicture");
+    }
+
+    var vid = document.getElementById("videvent");
+    vid.onplay = function() {
+        console.log("video played")
+    };
+
+    function getIPAddress() {
+      $.getJSON("https://jsonip.com?callback=?", function(data) {
+        alert("Your IP address is :- " + data.ip);
+      });
+    };
+
+    // var v = document.getElementById("cameraRecord");
+    // v.addEventListener("ended", function() { 
+    //     alert('Video has been viewed!'); 
+    // }, true);
+
+    </script>
+
+    <script>
+
+    $('.saveEvent').click(function() {
+
+     $.ajax({
+      type: "POST",
+      url: "scr_events.php"
+    }).done(function( resp ) {
+      alert( "Hello! " + resp );
+    });    
+
+    });
+
+    </script>
+</html>
